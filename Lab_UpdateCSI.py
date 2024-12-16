@@ -134,12 +134,12 @@ GAN_fingerprint_database = sort_data.reshape((len(label), 3 * 30 * 50))
 final_fingerprint_database = (1 - confidence) * gauss_fingerprint + confidence * GAN_fingerprint_database
 
 # Localization experiments.     Test datasets: final_fingerprint_database, original_data.     Labels: new_fingerprint_labels, label
-trainData, testData, trainLabel, testLabel = train_test_split(final_fingerprint_database, new_fingerprint_labels, test_size=0.1, random_state=7475)
+trainData, testData, trainLabel, testLabel = train_test_split(final_fingerprint_database, new_fingerprint_labels, test_size=0.1, random_state=10)
 KNN = KNeighborsRegressor(n_neighbors=5).fit(trainData, trainLabel)
 prediction = KNN.predict(testData)
 Training_time = time.time() - time_start
 
-print('mean', accuracyPre(prediction, testLabel), 'm')  # k=5 rand=1123  2.98 m.    Original dataset k=5 rand=8465 3.22 m
+print('mean', accuracyPre(prediction, testLabel), 'm')  # k=5  2.98 m.              Original dataset k=5  3.22 m
 print('mse', accuracyStd(prediction, testLabel), 'm')   # 1.55 m.                   Original dataset 1.35 m
 # print(Training_time, 's')
 # saveTestErrorMat(prediction, testLabel, '/Users/zhuxiaoqiang/Desktop/IEEE Trans/BJTU-third multi agent/main/Experiments/PSRO_Path_Analysis/LabLocalization/50iter-Lab-Error')
