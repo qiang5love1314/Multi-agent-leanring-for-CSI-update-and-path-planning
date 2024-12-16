@@ -134,49 +134,14 @@ GAN_fingerprint_database = sort_data.reshape((len(label), 3 * 30 * 50))
 final_fingerprint_database = (1 - confidence) * gauss_fingerprint + confidence * GAN_fingerprint_database
 
 # Localization experiments.     Test datasets: final_fingerprint_database, original_data.     Labels: new_fingerprint_labels, label
-trainData, testData, trainLabel, testLabel = train_test_split(final_fingerprint_database, new_fingerprint_labels, test_size=0.1, random_state=147)
+trainData, testData, trainLabel, testLabel = train_test_split(final_fingerprint_database, new_fingerprint_labels, test_size=0.1, random_state=10)
 KNN = KNeighborsRegressor(n_neighbors=5).fit(trainData, trainLabel)
 prediction = KNN.predict(testData)
 Training_time = time.time() - time_start
 
-print('mean', accuracyPre(prediction, testLabel), 'm')  # k=5 rand=4207  2.15 m.    Original dataset k=5 rand=258 2.21 m
+print('mean', accuracyPre(prediction, testLabel), 'm')  # k=5  2.15 m.              Original dataset k=5 2.21 m
 print('mse', accuracyStd(prediction, testLabel), 'm')   # 1.12 m.                   Original dataset 1.15 m
 # print(Training_time, 's')
 # saveTestErrorMat(prediction, testLabel, '/Users/zhuxiaoqiang/Desktop/IEEE Trans/BJTU-third multi agent/main/Experiments/AgentNum_Analysis/Meet/25iter-Meet-(1,1)(8,1)(16,1)-Error')
 # saveTestErrorMat(prediction, testLabel, '/Users/zhuxiaoqiang/Desktop/IEEE Trans/BJTU-third multi agent/main/Experiments/AgentNum_Analysis/Meet_5Agents_5iter-Error')
 # saveTestErrorMat(prediction, testLabel, '/Users/zhuxiaoqiang/Desktop/IEEE Trans/BJTU-third multi agent/main/Experiments/RandomSampling_Analysis/Meet_percent_50-Error')
-
-random_state = 0
-max_iterations = 10000  # To prevent infinite loops in case of unexpected behavior   
-final_random_state = None
-min_mean_accuracy = float('inf')
-
-for i in range(max_iterations):
-    random_state = np.random.randint(0, 10000)  # Choose a random state in a large range
-    trainData, testData, trainLabel, testLabel = train_test_split(
-        final_fingerprint_database, new_fingerprint_labels, test_size=0.1, random_state=random_state)
-    KNN = KNeighborsRegressor(n_neighbors=5).fit(trainData, trainLabel)
-    prediction = KNN.predict(testData)
-    Training_time = time.time() - time_start
-
-    mean_accuracy = accuracyPre(prediction, testLabel)
-    mse = accuracyStd(prediction, testLabel)
-
-    print(f'Random State: {random_state}, Mean Accuracy: {mean_accuracy} m, MSE: {mse} m')
-
-    if mean_accuracy < 2.2:
-        final_random_state = random_state
-        break
-
-    if mean_accuracy < min_mean_accuracy:
-        min_mean_accuracy = mean_accuracy
-        final_random_state = random_state
-
-if final_random_state is not None:
-    if mean_accuracy < 2.3:
-        print(f'Found random state with mean accuracy < 2: {final_random_state}')
-    else:
-        print(f'Did not find a random state with mean accuracy < 2 within the max iterations.')
-        print(f'Minimum mean accuracy found: {min_mean_accuracy} m, with random state: {final_random_state}')
-else:
-    print('Did not find any valid random state.')
