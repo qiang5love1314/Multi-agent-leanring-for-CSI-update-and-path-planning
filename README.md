@@ -21,6 +21,9 @@ Experimental results in two real-world scenarios demonstrate CPPU’s effectiven
 - **Dynamic Programming for Path Optimization**: Identify the most informative paths using a policy space oracle.
 - **Scalable and Adaptive**: Designed for dynamic environments with minimal manual intervention.
 
+## Usage
+The main files of this project are Lab_UpdateCSI.py and Meet_UpdateCSI.py. Run this files to execute the program.
+
 ## Results
 Our experimental validation in two real-world scenarios shows:
 
