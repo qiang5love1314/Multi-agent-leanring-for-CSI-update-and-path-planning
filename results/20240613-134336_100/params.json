@@ -1,0 +1,9 @@
+{
+    "num_experiments": 0,
+    "iters": 5,
+    "num_threads": 20,
+    "dim": 100,
+    "lr": 0.5,
+    "thresh": 0.03,
+    "psro": true
+}
