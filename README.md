@@ -21,3 +21,23 @@ Experimental results in two real-world scenarios demonstrate CPPU’s effectiven
 - **Dynamic Programming for Path Optimization**: Identify the most informative paths using a policy space oracle.
 - **Scalable and Adaptive**: Designed for dynamic environments with minimal manual intervention.
 
+## Results
+Our experimental validation in two real-world scenarios shows:
+
+- **Reduced data acquisition costs**:  
+  CPPU achieves significant efficiency improvements compared to traditional CSI collection methods.
+
+- **Maintained localization accuracy**:  
+  Despite cost reductions, CPPU achieves comparable accuracy with existing methods.
+
+## Citation
+If you find our work helpful, please cite:
+```bibtex
+@article{zhu2024cppu,
+  title={CPPU: Policy Space Diversity for Informative Path Planning and GAI-enabled Updating CSI in ISAC},
+  author={Zhu, X. and Liu, J. and Zhang, T. and others},
+  journal={IEEE Transactions on Cognitive Communications and Networking},
+  pages={1-14},
+  year={2024},
+  note={Accepted}
+}
