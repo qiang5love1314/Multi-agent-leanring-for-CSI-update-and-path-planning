@@ -43,6 +43,4 @@ If you find our work helpful, please cite:
   pages={1-14},
   year={2024},
   DOI={10.1109/TCCN.2024.3522088}
-
-}
 }
