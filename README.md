@@ -22,7 +22,7 @@ Experimental results in two real-world scenarios demonstrate CPPU’s effectiven
 - **Scalable and Adaptive**: Designed for dynamic environments with minimal manual intervention.
 
 ## Usage
-The main files of this project are Lab_UpdateCSI.py and Meet_UpdateCSI.py. Run this files to execute the program.
+The main files of this project are Lab_UpdateCSI.py and Meet_UpdateCSI.py. Run these files to execute the program.
 
 ## Results
 Our experimental validation in two real-world scenarios shows:
@@ -31,7 +31,7 @@ Our experimental validation in two real-world scenarios shows:
   CPPU achieves significant efficiency improvements compared to traditional CSI collection methods.
 
 - **Maintained localization accuracy**:  
-  Despite cost reductions, CPPU achieves comparable accuracy with existing methods.
+  Despite cost reductions, CPPU achieves accuracy comparable to that of existing methods.
 
 ## Citation
 If you find our work helpful, please cite:
