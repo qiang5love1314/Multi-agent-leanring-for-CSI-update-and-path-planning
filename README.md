@@ -42,5 +42,7 @@ If you find our work helpful, please cite:
   journal={IEEE Transactions on Cognitive Communications and Networking},
   pages={1-14},
   year={2024},
-  note={Accepted}
+  DOI={10.1109/TCCN.2024.3522088}
+
+}
 }
