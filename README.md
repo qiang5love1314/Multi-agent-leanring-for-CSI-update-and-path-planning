@@ -22,7 +22,7 @@ Experimental results in two real-world scenarios demonstrate CPPU’s effectiven
 - **Scalable and Adaptive**: Designed for dynamic environments with minimal manual intervention.
 
 ## Usage
-The main files of this project are Lab_UpdateCSI.py and Meet_UpdateCSI.py. Run these files to execute the program.
+The main files of this project are `Lab_UpdateCSI.py` and `Meet_UpdateCSI.py`. Run these files to execute the program.
 
 ## Results
 Our experimental validation in two real-world scenarios shows:
